@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Page - Tech Store</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+        }
+
+        header{
+            background:#111;
+            color:white;
+            padding:15px;
+            text-align:center;
+        }
+
+        .container{
+            display:flex;
+            justify-content:center;
+            align-items:flex-start;
+            gap:40px;
+            padding:40px;
+        }
+
+        .box{
+            background:white;
+            padding:25px;
+            border-radius:12px;
+            width:400px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        h2{
+            text-align:center;
+            color:#333;
+        }
+
+        input, textarea, select{
+            width:100%;
+            padding:10px;
+            margin:8px 0 15px;
+            border-radius:6px;
+            border:1px solid #ccc;
+        }
+
+        textarea{
+            resize:none;
+            height:70px;
+        }
+
+        .btn{
+            width:100%;
+            padding:12px;
+            background:#ff6f61;
+            color:white;
+            border:none;
+            border-radius:6px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        .btn:hover{
+            background:#ff3b2e;
+        }
+
+        .summary p{
+            margin:10px 0;
+            font-size:16px;
+        }
+
+        .total{
+            font-size:20px;
+            font-weight:bold;
+            color:#ff6f61;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Tech Store Checkout</h1>
+</header>
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="box">
+        <h2>Shipping Details</h2>
+
+        <form onsubmit="placeOrder(event)">
+            <label>Product</label>
+            <input type="text" id="product" value="Laptop" readonly>
+
+            <label>Name</label>
+            <input type="text" id="name" required>
+
+            <label>Phone</label>
+            <input type="tel" id="phone" required>
+
+            <label>Address</label>
+            <textarea id="address" required></textarea>
+
+            <label>Payment Method</label>
+            <select id="payment">
+                <option>Cash on Delivery</option>
+                <option>UPI</option>
+                <option>Card</option>
+            </select>
+
+            <button class="btn" type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="box summary">
+        <h2>Order Summary</h2>
+
+        <p>Product: <span id="summaryProduct">Laptop</span></p>
+        <p>Price: ₹ <span id="price">50000</span></p>
+        <hr>
+        <p class="total">Total: ₹ <span id="total">50000</span></p>
+    </div>
+
+</div>
+
+<script>
+    function placeOrder(e){
+        e.preventDefault();
+
+        var name = document.getElementById("name").value;
+        var phone = document.getElementById("phone").value;
+        var address = document.getElementById("address").value;
+
+        if(name==""  phone==""  address==""){
+            alert("Please fill all details!");
+            return;
+        }
+
+        alert("🎉 Thank you " + name + "! Your order is placed successfully.");
+        window.location.href="index.html";
+    }
+</script>
+
+</body>
+</html>

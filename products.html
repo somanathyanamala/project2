@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tech Store - Products</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <script>
+    function order(product) {
+        window.location.href = "order.html?product=" + product;
+    }
+</script>
+
+
+<header>
+    <h1>Tech Store</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<h2 class="center">Our Products</h2>
+
+<div class="products">
+    <div class="card">
+        <h3>Laptop</h3>
+        <p>High performance laptop.</p>
+        <p>₹50,000</p>
+        <button onclick="order('Laptop')">Order Now</button>
+    </div>
+
+    <div class="card">
+        <h3>Smartphone</h3>
+        <p>Latest 5G smartphone.</p>
+        <p>₹20,000</p>
+       <button onclick="order('Smartphone')">Order Now</button>
+    </div>
+
+    <div class="card">
+        <h3>Headphones</h3>
+        <p>Noise cancelling headphones.</p>
+        <p>₹3,000</p>
+        <button onclick="order('Headphones')">Order Now</button>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Tech Store. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
